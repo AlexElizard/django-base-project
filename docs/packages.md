@@ -26,3 +26,20 @@ Cамый популярный адаптер PostgreSQL для языка пр�
 
 ### [DRF Spectacular](https://drf-spectacular.readthedocs.io/en/latest/)
 Приложение для документирования API в формате OpenAPI3.
+
+# Пакеты для определенных нужд
+## Карты
+### [GeoPy](https://geopy.readthedocs.io/en/stable/)
+Клиент Python для нескольких популярных веб-сервисов геокодирования.
+
+### [Google Maps Services](https://github.com/googlemaps/google-maps-services-python)
+Клиентская библиотека Python для следующих API Карт Google:
+* Directions API
+* Distance Matrix API
+* Elevation API
+* Geocoding API
+* Geolocation API
+* Time Zone API
+* Roads API
+* Places API
+* Maps Static API
