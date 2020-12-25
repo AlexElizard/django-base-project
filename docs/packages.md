@@ -28,6 +28,7 @@ Cамый популярный адаптер PostgreSQL для языка пр�
 Приложение для документирования API в формате OpenAPI3.
 
 # Пакеты для определенных нужд
+
 ## [Django Image Kit](https://github.com/matthewwithanm/django-imagekit)
 Приложение для обработки изображения. Позволяет изменять размер, обрезать, менять цвет и т.д.
 
@@ -49,3 +50,19 @@ Cамый популярный адаптер PostgreSQL для языка пр�
 * Roads API
 * Places API
 * Maps Static API
+
+## WYSIWYG-редакторы
+### [Django Markdown Editor](https://github.com/agusmakmun/django-markdown-editor)
+Плагин Markdown Editor для Django, поддерживаемый для Bootstrap и Semantic-UI .
+
+### [Django Quill Editor](https://github.com/jazzband/django-tinymce)
+Упрощает использование [QuillJS](https://quilljs.com/). QuillJS полностью **бесплатен** и поставляется под лицензией BSD
+
+### [Django CKEditor](https://github.com/django-ckeditor/django-ckeditor)
+Упрощает использование [CKEditor](https://ckeditor.com/). Обратите внимание, CKEditor [платный](https://ckeditor.com/pricing/)
+
+### [Django TinyMCE](https://github.com/jazzband/django-tinymce)
+Упрощает использование [TinyMCE](https://www.tiny.cloud/). Обратите внимание, TinyMCE [платный](https://www.tiny.cloud/pricing)
+
+### [Django Floala Editor](https://github.com/jazzband/django-tinymce)
+Упрощает использование [Floala](https://froala.com/wysiwyg-editor/). Обратите внимание, Floala [платный](https://froala.com/wysiwyg-editor/pricing/)
