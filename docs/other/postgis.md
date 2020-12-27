@@ -1,7 +1,7 @@
 # Установка PostGIS
 ## Arch
 ```
-sudo pacman -Sy postgis
+sudo pacman -Suy postgis
 ```
 
 # Включение расширения

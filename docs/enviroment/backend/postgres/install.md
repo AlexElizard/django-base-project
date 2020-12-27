@@ -18,7 +18,7 @@ sudo apt-get update && sudo apt install postgresql
 ## Arch
 * Установите PostgreSQL
 ```
-sudo pacman -Sy postgresql
+sudo pacman -Suy postgresql
 ```
 * Инициализируйте кластер базы данных
 ```
