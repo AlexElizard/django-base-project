@@ -56,10 +56,11 @@ Cамый популярный адаптер PostgreSQL для языка пр�
 Плагин Markdown Editor для Django, поддерживаемый для Bootstrap и Semantic-UI .
 
 ### [Django Quill Editor](https://github.com/LeeHanYeong/django-quill-editor)
+В данный момент работает кривовато и плохо взаимодействует с DRF
 Упрощает использование [QuillJS](https://quilljs.com/). QuillJS полностью **бесплатен** и поставляется под лицензией BSD
 
 ### [Django CKEditor](https://github.com/django-ckeditor/django-ckeditor)
-Упрощает использование [CKEditor](https://ckeditor.com/). Обратите внимание, CKEditor [платный](https://ckeditor.com/pricing/)
+Упрощает использование [CKEditor](https://ckeditor.com/). Бесплатен для Open Source. Имеется [платная коммерческая лицензия](https://ckeditor.com/pricing/)
 
 ### [Django TinyMCE](https://github.com/jazzband/django-tinymce)
 Упрощает использование [TinyMCE](https://www.tiny.cloud/). Обратите внимание, TinyMCE [платный](https://www.tiny.cloud/pricing)
