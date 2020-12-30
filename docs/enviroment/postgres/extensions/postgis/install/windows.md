@@ -1,9 +1,3 @@
-# Установка PostGIS
-## Arch
-```
-sudo pacman -Suy postgis
-```
-## Windows
 * Установите `Postgis` с помощью `Stack Builder`. Postgis находится в разделе `Spatial Extensions`
 * Скачайте 64-битный [установщик OSGeo4W](https://trac.osgeo.org/osgeo4w/)
 * Установите `OSGeo4W` выбрав установку Веб-ГИС. В списке "Выбрать пакеты" выберите `GDAL`
@@ -16,11 +10,4 @@ set PATH=%PATH%;%OSGEO4W_ROOT%\bin
 reg ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_EXPAND_SZ /f /d "%PATH%"
 reg ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v GDAL_DATA /t REG_EXPAND_SZ /f /d "%GDAL_DATA%"
 reg ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v PROJ_LIB /t REG_EXPAND_SZ /f /d "%PROJ_LIB%"
-```
-
-# Включение расширения
-* Подключитесь к своей БД
-* Включите расширения
-```
-CREATE EXTENSION postgis;
 ```

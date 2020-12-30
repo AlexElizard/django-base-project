@@ -1,6 +1,3 @@
-# Установка Nginx
-
-## Debian
 * Подключите apt-репозиторий
 ```
 echo "deb http://nginx.org/packages/debian `lsb_release -cs` nginx" | sudo tee /etc/apt/sources.list.d/nginx.list

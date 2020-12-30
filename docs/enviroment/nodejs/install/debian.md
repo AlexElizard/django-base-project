@@ -1,6 +1,3 @@
-## Установка Node.js
-
-## Debian
 * Обновите список пакетов:
 ```
 sudo apt update
