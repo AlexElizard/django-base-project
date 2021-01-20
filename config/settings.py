@@ -51,6 +51,8 @@ TEMPLATES = [
 ##################
 # AUTHENTICATION #
 ##################
+AUTH_USER_MODEL = 'auth.User'
+
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -89,7 +91,7 @@ INSTALLED_APPS.append('django_filters')
 #########################
 # Django REST Framework #
 #########################
-INSTALLED_APPS.extend(['rest_framework', 'rest_framework.authtoken'])
+INSTALLED_APPS.append(['rest_framework'])
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
     'DEFAULT_FILTER_BACKENDS': [],
