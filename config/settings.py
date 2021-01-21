@@ -62,6 +62,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': []
+}
+
 ################
 # CORS Headers #
 ################
@@ -92,13 +96,11 @@ INSTALLED_APPS.append('django_filters')
 # Django REST Framework #
 #########################
 INSTALLED_APPS.append(['rest_framework'])
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [],
-    'DEFAULT_FILTER_BACKENDS': [],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-}
+
+REST_FRAMEWORK['DEFAULT_FILTER_BACKENDS'] = []
+REST_FRAMEWORK['DEFAULT_PERMISSION_CLASSES'] = [
+    'rest_framework.permissions.IsAuthenticated'
+]
 
 if DEBUG:
     REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'].append(
