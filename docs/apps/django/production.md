@@ -23,7 +23,4 @@ python manage.py migrate
 ```
 python manage.py loaddata init
 ```
-* Запустите wsgi-server. **workers = кол-во_ядер * 2 + 1**
-```
-gunicorn --workers=3 config.wsgi --reload -b 0.0.0.0:8000 --daemon
-```
+* Запустите wsgi-server [Gunicorn](../../enviroment/python/gunicorn.md)
