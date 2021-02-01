@@ -95,7 +95,7 @@ INSTALLED_APPS.append('django_filters')
 #########################
 # Django REST Framework #
 #########################
-INSTALLED_APPS.append(['rest_framework'])
+INSTALLED_APPS.append('rest_framework')
 
 REST_FRAMEWORK['DEFAULT_FILTER_BACKENDS'] = []
 REST_FRAMEWORK['DEFAULT_PERMISSION_CLASSES'] = [
