@@ -17,6 +17,9 @@ WSGI HTTP-сервер
 ## [Psycopg2](https://www.psycopg.org/)
 Cамый популярный адаптер PostgreSQL для языка программирования Python
 
+## [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)
+Бекенд аутентификации JSON Web Token для Django REST Framework
+
 ## Пакеты для develop-окружения
 ### [Django CORS Headers](https://github.com/adamchainz/django-cors-headers)
 Приложение Django, которое добавляет в ответы заголовки Cross-Origin Resource Sharing (CORS). Это позволяет в браузере запрашивать ваше приложение Django из других источников
@@ -50,6 +53,13 @@ Cамый популярный адаптер PostgreSQL для языка пр�
 * Roads API
 * Places API
 * Maps Static API
+
+## Регистрация и аутентификация
+### [Dj REST Auth](https://dj-rest-auth.readthedocs.io/en/latest/)
+Надстройка библиотеки [allauth](https://django-allauth.readthedocs.io/en/latest/) для Django REST Framework
+
+### [Djoser](https://djoser.readthedocs.io/en/latest/)
+Реализация системы аутентификации Django в REST
 
 ## WYSIWYG-редакторы
 ### [Django Markdown Editor](https://github.com/agusmakmun/django-markdown-editor)
