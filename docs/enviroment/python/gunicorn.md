@@ -33,7 +33,7 @@ SocketUSER={NGINX_USER}
 [Install]
 WantedBy=sockets.target'''
 
-with open(f'{SYSTEMD_PATH}/gunicorn-{PROJECT_NAME}.socket ', 'w') as file:
+with open(f'{SYSTEMD_PATH}/gunicorn-{PROJECT_NAME}.socket', 'w') as file:
     file.write(socket_output)
 
 ####################

@@ -13,9 +13,9 @@ django = "*"
 django-environ = "*"
 django-filter = "*"
 djangorestframework = "*"
+djangorestframework-simplejwt = "*"
 gunicorn = "*"
 psycopg2 = "*"
-djangorestframework-simplejwt = "*"
 
 [requires]
 python_version = "3.9"

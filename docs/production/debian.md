@@ -8,4 +8,5 @@
 
 # Проект
 Раздел находится в разработке
-* [Запустите проект](../apps/django/production.md) 
+* [Запустите проект](../apps/django/production.md)
+* [Настройте Nginx](../enviroment/nginx/config.md)
