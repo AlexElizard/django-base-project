@@ -6,16 +6,17 @@ sudo systemctl enable --now gunicorn-{PROJECT_NAME}.service
 ```
 
 ### Скрипт для генерации файлов сокета и сервиса
-**Примечания:** 
+**Примечания:**
 * Запускать из под `sudo`
+* Скрипт должен располагаться в корне проекта  
 * Скрипт генерирует сервис и сокет в формате `gunicorn-{PROJECT_NAME}.socket` и `gunicorn-{PROJECT_NAME}.service`
 ```python
-import os
-import pwd
+from pathlib import Path
 
-BASE_DIR = os.getcwd()
-PROJECT_NAME = os.path.basename(os.getcwd())
-USER = pwd.getpwuid(os.getuid())
+file = Path(__file__).absolute()
+BASE_DIR = file.parent
+PROJECT_NAME = file.parent.name
+USER = Path(BASE_DIR).owner()
 NGINX_USER = 'www-data'
 PIPENV_PATH = '/usr/local/bin/pipenv'
 SYSTEMD_PATH = '/etc/systemd/system'
@@ -24,11 +25,11 @@ SYSTEMD_PATH = '/etc/systemd/system'
 # Создание сокета #
 ###################
 socket_output = f'''[Unit]
-Description={PROJECT_NAME} socket
+Description={PROJECT_NAME}-socket
 
 [Socket]
 ListenStream=/run/gunicorn-{PROJECT_NAME}.sock
-SocketUSER={NGINX_USER}
+SocketUser={NGINX_USER}
 
 [Install]
 WantedBy=sockets.target'''
@@ -40,13 +41,13 @@ with open(f'{SYSTEMD_PATH}/gunicorn-{PROJECT_NAME}.socket', 'w') as file:
 # Создание cервиса #
 ####################
 service_output = f'''[Unit]
-Description={PROJECT_NAME} daemon
+Description={PROJECT_NAME}-daemon
 Requires=gunicorn-{PROJECT_NAME}.socket
 After=network.target
 
 [Service]
 Type=notify
-USER={USER}
+User={USER}
 Group={USER}
 RuntimeDirectory=gunicorn
 WorkingDirectory={BASE_DIR}
@@ -57,7 +58,7 @@ TimeoutStopSec=5
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-USER.target
+WantedBy=multi-user.target
 '''
 
 with open(f'{SYSTEMD_PATH}/gunicorn-{PROJECT_NAME}.service', 'w') as file:
