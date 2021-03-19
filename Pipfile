@@ -16,6 +16,7 @@ djangorestframework = "*"
 djangorestframework-simplejwt = "*"
 gunicorn = "*"
 psycopg2 = "*"
+pydantic = {extras = ["email"], version = "*"}
 
 [requires]
 python_version = "3.9"

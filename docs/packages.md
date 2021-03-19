@@ -17,6 +17,9 @@ WSGI HTTP-сервер
 ## [Psycopg2](https://www.psycopg.org/)
 Cамый популярный адаптер PostgreSQL для языка программирования Python
 
+## [Pydantic](https://pydantic-docs.helpmanual.io/)
+Библиотека для валидации, сериализации и десериализации данных на основе type hinting
+
 ## [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)
 Бекенд аутентификации JSON Web Token для Django REST Framework
 
@@ -38,6 +41,8 @@ Cамый популярный адаптер PostgreSQL для языка пр�
 ## [Django Render PDF](https://django-renderpdf.readthedocs.io/en/latest/)
 Приложение для генерации PDF-файлов
 
+# [Django Cleanup](https://github.com/un1t/django-cleanup)
+Приложение автоматически удаляет файлы для FileField, ImageField и подклассы.
 ## Карты
 ### [GeoPy](https://geopy.readthedocs.io/en/stable/)
 Клиент Python для нескольких популярных веб-сервисов геокодирования.
