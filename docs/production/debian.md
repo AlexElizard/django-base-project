@@ -10,4 +10,5 @@
 
 # Проект
 * [Запустите проект](../apps/django/production.md)
+* [Соберите frontend](../apps/react/production.md)  
 * [Настройте Nginx](../enviroment/nginx/config.md)
