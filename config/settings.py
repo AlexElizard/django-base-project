@@ -51,11 +51,6 @@ TEMPLATES = [
 ##########################################################################################
 #                                        PACKAGES                                        #
 ##########################################################################################
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [],
-    'DEFAULT_FILTER_BACKENDS': [],
-    'DEFAULT_PERMISSION_CLASSES': [],
-}
 ################
 # CORS Headers #
 ################
@@ -73,13 +68,11 @@ INSTALLED_APPS.append('django_filters')
 # Django REST Framework #
 #########################
 INSTALLED_APPS.append('rest_framework')
-REST_FRAMEWORK['DEFAULT_PERMISSION_CLASSES'] = [
-    'rest_framework.permissions.IsAuthenticated'
-]
-if DEBUG:
-    REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'].append(
-        'rest_framework.authentication.SessionAuthentication'
-    )
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated'
+    ]
+}
 
 #################
 # Debug Toolbar #
@@ -115,6 +108,10 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'] = [
     'rest_framework_simplejwt.authentication.JWTAuthentication',
 ]
+if DEBUG:
+    REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'].append(
+        'rest_framework.authentication.SessionAuthentication'
+    )
 
 ############
 # Database #

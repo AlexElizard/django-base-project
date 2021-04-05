@@ -17,7 +17,7 @@ if __name__ == '__main__':
     PIPENV_PATH = '/usr/local/bin/pipenv'
     SYSTEMD_PATH = '/etc/systemd/system'
 
-    # Создание сокета
+    # Шаблон сокета
     socket_output = f'''[Unit]
     Description={PROJECT_NAME}-socket
 
@@ -28,10 +28,7 @@ if __name__ == '__main__':
     [Install]
     WantedBy=sockets.target'''
 
-    with open(f'{SYSTEMD_PATH}/gunicorn-{PROJECT_NAME}.socket', 'w') as file:
-        file.write(socket_output)
-
-    # Создание cервиса
+    # Шаблон cервиса
     service_output = f'''[Unit]
     Description={PROJECT_NAME}-daemon
     Requires=gunicorn-{PROJECT_NAME}.socket
@@ -53,8 +50,16 @@ if __name__ == '__main__':
     WantedBy=multi-user.target
     '''
 
-    with open(f'{SYSTEMD_PATH}/gunicorn-{PROJECT_NAME}.service', 'w') as file:
-        file.write(service_output)
+    print("# Сокет:\n" + socket_output, "# Сервис:\n" + service_output, sep='\n\n')
+    choice = input('Все верно? y or n')
+    if choice == 'y':
+        with open(f'{SYSTEMD_PATH}/gunicorn-{PROJECT_NAME}.socket', 'w') as file:
+            file.write(socket_output)
 
-    print('Введите команду для добавления сервиса в автозагрузку:')
-    print(f'sudo systemctl enable --now gunicorn-{PROJECT_NAME}.service')
+        with open(f'{SYSTEMD_PATH}/gunicorn-{PROJECT_NAME}.service', 'w') as file:
+            file.write(service_output)
+
+        print('Введите команду для добавления сервиса в автозагрузку:')
+        print(f'sudo systemctl enable --now gunicorn-{PROJECT_NAME}.service')
+    else:
+        print('Измените необходимые параметры в файле скрипта')
