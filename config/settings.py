@@ -1,5 +1,6 @@
 import environ
 import re
+from datetime import timedelta
 from email.utils import getaddresses
 
 BASE_DIR = environ.Path(__file__) - 2
@@ -90,6 +91,15 @@ if DEBUG:
 ###################
 INSTALLED_APPS.append('drf_spectacular')
 REST_FRAMEWORK['DEFAULT_SCHEMA_CLASS'] = 'drf_spectacular.openapi.AutoSchema'
+
+##############
+# Simple JWT #
+##############
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
+}
 
 ##########################################################################################
 #                                        SETTINGS                                        #
