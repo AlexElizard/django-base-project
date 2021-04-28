@@ -10,7 +10,7 @@ urlpatterns = [
 
 if 'rest_framework_simplejwt.authentication.JWTAuthentication' in settings.REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES']:
     from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
-    urlpatterns.append(path('api/token/', include([
+    urlpatterns.append(path('api/auth/token/', include([
         path('', TokenObtainPairView.as_view(), name='token_obtain_pair'),
         path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
         path('verify/', TokenVerifyView.as_view(), name='token_verify'),

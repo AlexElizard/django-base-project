@@ -1,0 +1,76 @@
+[
+  {
+    "model": "banner.category",
+    "pk": 1,
+    "fields": {
+      "name": "Главная страница",
+      "slug": "main_page"
+    }
+  },
+  {
+    "model": "banner.category",
+    "pk": 2,
+    "fields": {
+      "name": "Новости",
+      "slug": "news"
+    }
+  },
+  {
+    "model": "banner.banner",
+    "pk": 1,
+    "fields": {
+      "image": "tests/banners/covid.jpg",
+      "url": "https://www.youtube.com/results?search_query=covid",
+      "name": "COVID-19",
+      "published": "2010-01-01T00:00:00Z",
+      "expired": null,
+      "categories": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "banner.banner",
+    "pk": 2,
+    "fields": {
+      "image": "tests/banners/easter.jpg",
+      "url": "https://www.youtube.com/results?search_query=пасха",
+      "name": "Пасха",
+      "published": "2010-01-01T00:00:00Z",
+      "expired": null,
+      "categories": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "banner.banner",
+    "pk": 3,
+    "fields": {
+      "image": "tests/banners/juggernaut.jpg",
+      "url": "https://www.youtube.com/results?search_query=juggernaut",
+      "name": "Juggernaut",
+      "published": "2010-01-01T00:00:00Z",
+      "expired": "2040-01-01T00:00:00Z",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "banner.banner",
+    "pk": 3,
+    "fields": {
+      "image": "tests/banners/juggernaut.jpg",
+      "url": "https://www.youtube.com/results?search_query=django",
+      "name": "Inactive",
+      "published": "2010-01-01T00:00:00Z",
+      "expired": "2010-01-01T00:00:00Z",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  }
+]

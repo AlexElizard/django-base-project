@@ -15,8 +15,8 @@ django-filter = "*"
 djangorestframework = "*"
 djangorestframework-simplejwt = "*"
 gunicorn = "*"
+pillow = "*"
 psycopg2 = "*"
-pydantic = {extras = ["email"], version = "*"}
 
 [requires]
 python_version = "3.9"
