@@ -7,3 +7,10 @@
 
 ## Запуск проекта в режиме production
 * [Debian](docs/production/debian.md)
+
+
+## Contrib Application Requirements
+### Banner
+```
+pipenv install pillow
+```

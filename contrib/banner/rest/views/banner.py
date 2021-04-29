@@ -7,7 +7,7 @@ from ...models import Banner
 
 
 class BannerListAPIView(generics.ListAPIView):
-    queryset = Banner.objects.filter(published__lte=now()).exclude(expired__lte=now())
+    queryset = Banner.objects.active()
     serializer_class = BannerSerializer
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = BannerFilter
