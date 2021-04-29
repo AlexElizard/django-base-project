@@ -8,9 +8,9 @@ class Banner(models.Model):
     image = models.ImageField(_("Image"), upload_to='banners/images/%Y/%m/%d/')
     url = models.URLField(_("URL"))
     name = models.CharField(_("Name"), max_length=150)
+    categories = models.ManyToManyField(Category, verbose_name=_("Categories"))
     published = models.DateTimeField(_("Published"), default=now)
     expired = models.DateTimeField(_("Expired"), null=True, blank=True)
-    categories = models.ManyToManyField(Category, verbose_name=_("Categories"))
 
     class Meta:
         verbose_name = _("Banner")

@@ -1,4 +1,0 @@
-# Requirements
-```
-pipenv install pillow
-```
