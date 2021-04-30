@@ -6,8 +6,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('news/', include('contrib.news.rest.urls')),
-    path('banner/', include('contrib.banner.rest.urls')),
 ]
 
 if 'ckeditor_uploader' in settings.INSTALLED_APPS:

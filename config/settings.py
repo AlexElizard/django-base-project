@@ -20,11 +20,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-
-    'contrib.abstract.apps.AbstractConfig',
-    'contrib.news.apps.NewsConfig',
-    'contrib.banner.apps.BannersConfig'
 ]
 
 MIDDLEWARE = [
@@ -171,8 +166,9 @@ MEDIA_ROOT = BASE_DIR.path('media')
 ########################
 # Internationalization #
 ########################
-USE_I18N = True
 LANGUAGE_CODE = 'ru'
+LOCALE_PATHS = []
+USE_I18N = True
 USE_L10N = True
 
 ###########
