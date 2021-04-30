@@ -20,6 +20,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
+    'contrib.abstract.apps.AbstractConfig',
+    'contrib.news.apps.NewsConfig',
+    'contrib.banner.apps.BannersConfig'
 ]
 
 MIDDLEWARE = [
@@ -59,6 +64,23 @@ if DEBUG:
     INSTALLED_APPS.append('corsheaders')
     MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
     CORS_ORIGIN_ALLOW_ALL = True
+
+##################################
+# Django Better Admin ArrayField #
+##################################
+INSTALLED_APPS.append('django_better_admin_arrayfield')
+
+###################
+# Django CKEditor #
+###################
+INSTALLED_APPS.extend([
+    'ckeditor',
+    'ckeditor_uploader',
+])
+CKEDITOR_BROWSE_SHOW_DIRS = True
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_FORCE_JPEG_COMPRESSION = True
+CKEDITOR_UPLOAD_PATH = "ckeditor/"
 
 ##################
 # Django Filters #

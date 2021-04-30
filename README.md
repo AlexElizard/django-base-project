@@ -14,3 +14,9 @@
 ```
 pipenv install pillow
 ```
+
+### News
+```
+pipenv install pillow
+pipenv install django-ckeditor
+```

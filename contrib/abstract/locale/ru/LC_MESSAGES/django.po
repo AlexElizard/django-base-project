@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-30 11:09+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\admin\article.py:8
+msgid "Preview"
+msgstr "Анонс"
+
+#: .\admin\article.py:9
+msgid "Detail"
+msgstr "Детально"
+
+#: .\admin\publication.py:7
+msgid "Publication status"
+msgstr "Статус публикации"
+
+#: .\admin\publication.py:12 .\models\publication.py:16
+msgid "Expired"
+msgstr "Истекло"
+
+#: .\admin\publication.py:13 .\models\publication.py:15
+msgid "Published"
+msgstr "Опубликовано"
+
+#: .\admin\publication.py:14
+msgid "Not yet published"
+msgstr "Еще не опубликовано"
+
+#: .\admin\publication.py:30
+msgid "Publication"
+msgstr "Статус публикации"
+
+#: .\models\article.py:8
+msgid "Title"
+msgstr "Заголовок"
+
+#: .\models\article.py:9
+msgid "Preview image"
+msgstr "Картинка для анонса"
+
+#: .\models\article.py:10
+msgid "Preview text"
+msgstr "Описание для анонса"
+
+#: .\models\article.py:11
+msgid "Detail image"
+msgstr "Детальная картинка"
+
+#: .\models\article.py:12
+msgid "Detail text"
+msgstr "Детальное описание"
+
+#: .\models\article.py:16
+msgid "Article"
+msgstr "Статья"
+
+#: .\models\article.py:17
+msgid "Articles"
+msgstr "Статьи"
+
+#: .\models\category.py:6
+msgid "Name"
+msgstr "Наименование"
+
+#: .\models\category.py:7
+msgid "Slug"
+msgstr "Slug"
+
+#: .\models\category.py:11
+msgid "Category"
+msgstr "Категория"
+
+#: .\models\category.py:12
+msgid "Categories"
+msgstr "Категории"

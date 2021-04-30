@@ -6,7 +6,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('news/', include('contrib.news.rest.urls')),
+    path('banner/', include('contrib.banner.rest.urls')),
 ]
+
+if 'ckeditor_uploader' in settings.INSTALLED_APPS:
+    urlpatterns.append(path('api/ckeditor/', include('ckeditor_uploader.urls')))
 
 if 'rest_framework_simplejwt.authentication.JWTAuthentication' in settings.REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES']:
     from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView

@@ -10,6 +10,8 @@ drf-spectacular = "*"
 
 [packages]
 django = "*"
+django-better-admin-arrayfield = "*"
+django-ckeditor = "*"
 django-environ = "*"
 django-filter = "*"
 djangorestframework = "*"
