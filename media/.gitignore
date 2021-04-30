@@ -5,3 +5,5 @@
 !.gitignore
 !default
 !default/**
+!test
+!test/**
