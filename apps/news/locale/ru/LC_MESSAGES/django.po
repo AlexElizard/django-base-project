@@ -20,26 +20,14 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\apps\banner\apps.py:7 .\apps\banner\models\banner.py:21
-msgid "Banners"
-msgstr "Баннеры"
+#: .\apps\news\apps.py:7
+msgid "News"
+msgstr "Новости"
 
-#: .\apps\banner\models\banner.py:14
-msgid "Image"
-msgstr "Изображение"
+#: .\apps\news\models\article.py:9
+msgid "Pinned"
+msgstr "Закреплено"
 
-#: .\apps\banner\models\banner.py:15
-msgid "URL"
-msgstr "URL"
-
-#: .\apps\banner\models\banner.py:16
-msgid "Name"
-msgstr "Наименование"
-
-#: .\apps\banner\models\banner.py:17
-msgid "Categories"
-msgstr "Категории"
-
-#: .\apps\banner\models\banner.py:20
-msgid "Banner"
-msgstr "Баннер"
+#: .\apps\news\models\article.py:10
+msgid "Category"
+msgstr "Категория"

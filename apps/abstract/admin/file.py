@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 
-class FileInline(admin.TabularInline):
+class AbstractFileInline(admin.TabularInline):
     model = None
     extra = 1

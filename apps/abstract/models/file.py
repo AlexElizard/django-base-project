@@ -14,3 +14,9 @@ class AbstractFile(models.Model):
     def upload_path(self, filename: str):
         """method to provide upload path for file field"""
         raise NotImplementedError()
+
+    class Meta:
+        abstract = True
+        verbose_name = _("File")
+        verbose_name_plural = _("Files")
+        ordering = ('-created', )

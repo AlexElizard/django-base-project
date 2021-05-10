@@ -8,3 +8,4 @@ class ArticleSerializer(serializers.Serializer):
     preview_text = CKEditorTextField
     detail_image = serializers.ImageField()
     detail_text = CKEditorTextField
+    published = serializers.DateTimeField()
