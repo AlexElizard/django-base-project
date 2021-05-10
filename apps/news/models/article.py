@@ -9,10 +9,13 @@ class Article(AbstractBaseArticle):
     is_pinned = models.BooleanField(_("Pinned"))
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name=_("Category"))
 
-    def preview_upload_path(self: 'AbstractBaseArticle', filename: str):
+    def preview_upload_path(self, filename: str):
         date = now().date()
         return f'news/{date.year}/{date.month}/{date.day}/news_{self.pk}_preview_{filename}'
 
-    def detail_upload_path(self: 'AbstractBaseArticle', filename: str):
+    def detail_upload_path(self, filename: str):
         date = now().date()
         return f'news/{date.year}/{date.month}/{date.day}/news_{self.pk}_detail_{filename}'
+
+    class Meta(AbstractBaseArticle.Meta):
+        ordering = ('-is_pinned', '-published')

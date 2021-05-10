@@ -4,11 +4,11 @@ from django.utils.translation import gettext_lazy as _
 from apps.abstract.models.publication import AbstractPublication
 
 
-def _preview_upload_path(instance, filename: str):
+def _preview_upload_path(instance: 'AbstractBaseArticle', filename: str):
     return instance.preview_upload_path(filename)
 
 
-def _detail_upload_path(instance, filename: str):
+def _detail_upload_path(instance: 'AbstractBaseArticle', filename: str):
     return instance.detail_upload_path(filename)
 
 
