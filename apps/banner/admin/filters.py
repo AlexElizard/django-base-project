@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 class PublishFilterAdmin(admin.SimpleListFilter):
     title = _("Publication status")
-    parameter_name = 'pub_status'
+    parameter_name = 'publication_status'
 
     def lookups(self, request, model_admin):
         return (

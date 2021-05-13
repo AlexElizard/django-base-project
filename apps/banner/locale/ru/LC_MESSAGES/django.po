@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-13 13:51+1000\n"
+"POT-Creation-Date: 2021-05-13 14:21+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "Опубликовано"
 msgid "Not yet published"
 msgstr "Еще не опубликовано"
 
-#: .\apps\banner\apps.py:7 .\apps\banner\models\banner.py:31
+#: .\apps\banner\apps.py:7 .\apps\banner\models\banner.py:35
 msgid "Banners"
 msgstr "Баннеры"
 
@@ -58,13 +58,13 @@ msgstr "Категории"
 msgid "Expiration"
 msgstr "Истекает"
 
-#: .\apps\banner\models\banner.py:30
-msgid "Banner"
-msgstr "Баннер"
-
-#: .\apps\banner\models\banner.py:39
+#: .\apps\banner\models\banner.py:31
 msgid "The field must be larger than published"
 msgstr "Поле должно быть больше чем публикация"
+
+#: .\apps\banner\models\banner.py:34
+msgid "Banner"
+msgstr "Баннер"
 
 #: .\apps\banner\models\category.py:7
 msgid "Slug"

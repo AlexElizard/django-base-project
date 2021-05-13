@@ -1,14 +1,8 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-13 13:51+1000\n"
+"POT-Creation-Date: 2021-05-13 14:21+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,14 +14,90 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: .\apps\news\admin\admin.py:16
+msgid "Preview"
+msgstr "Анонс"
+
+#: .\apps\news\admin\admin.py:17
+msgid "Detail"
+msgstr "Подробно"
+
+#: .\apps\news\admin\admin.py:18 .\apps\news\models\article.py:28
+msgid "Publication"
+msgstr "Публикация"
+
+#: .\apps\news\admin\filter.py:6
+msgid "Publication status"
+msgstr "Статус публикации"
+
+#: .\apps\news\admin\filter.py:11
+msgid "Expired"
+msgstr "Истекло"
+
+#: .\apps\news\admin\filter.py:12
+msgid "Published"
+msgstr "Опубликовано"
+
+#: .\apps\news\admin\filter.py:13
+msgid "Not yet published"
+msgstr "Еще не опубликовано"
+
 #: .\apps\news\apps.py:7
 msgid "News"
 msgstr "Новости"
 
-#: .\apps\news\models\article.py:9
+#: .\apps\news\models\article.py:21
 msgid "Pinned"
 msgstr "Закреплено"
 
-#: .\apps\news\models\article.py:10
+#: .\apps\news\models\article.py:22
+msgid "Title"
+msgstr "Название"
+
+#: .\apps\news\models\article.py:23 .\apps\news\models\category.py:10
 msgid "Category"
 msgstr "Категория"
+
+#: .\apps\news\models\article.py:24
+msgid "Preview image"
+msgstr "Картинка для анонса"
+
+#: .\apps\news\models\article.py:25
+msgid "Preview text"
+msgstr "Описание для анонса"
+
+#: .\apps\news\models\article.py:26
+msgid "Detail image"
+msgstr "Детальная картинка"
+
+#: .\apps\news\models\article.py:27
+msgid "Detail text"
+msgstr "Подробное описание"
+
+#: .\apps\news\models\article.py:29
+msgid "Expiration"
+msgstr "Истекает"
+
+#: .\apps\news\models\article.py:35
+msgid "The field must be larger than published"
+msgstr "Поле должно быть больше чем публикация"
+
+#: .\apps\news\models\article.py:38
+msgid "Article"
+msgstr "Статья"
+
+#: .\apps\news\models\article.py:39
+msgid "Articles"
+msgstr "Статьи"
+
+#: .\apps\news\models\category.py:6
+msgid "Name"
+msgstr "Наименование"
+
+#: .\apps\news\models\category.py:7
+msgid "Slug"
+msgstr "Slug"
+
+#: .\apps\news\models\category.py:11
+msgid "Categories"
+msgstr "Категории"

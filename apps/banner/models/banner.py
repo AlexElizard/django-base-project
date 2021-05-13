@@ -22,9 +22,13 @@ class Banner(models.Model):
     name = models.CharField(_("Name"), max_length=150)
     categories = models.ManyToManyField(Category, verbose_name=_("Categories"))
     publication = models.DateTimeField(_("Publication"), default=now)
-    expiration = models.DateTimeField(_("Expiration"), null=True, blank=True)
+    expiration = models.DateTimeField(_("Expiration"), blank=True, null=True)
 
     objects = BannerQuerySet.as_manager()
+
+    def clean(self):
+        if self.expiration and self.expiration <= self.publication:
+            raise ValidationError({"expired": _("The field must be larger than published")})
 
     class Meta:
         verbose_name = _("Banner")
@@ -33,7 +37,3 @@ class Banner(models.Model):
 
     def __str__(self):
         return self.name
-
-    def clean(self):
-        if self.expired and self.expired <= self.published:
-            raise ValidationError({"expired": _("The field must be larger than published")})

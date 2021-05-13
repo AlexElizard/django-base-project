@@ -1,21 +1,40 @@
+from ckeditor_uploader.fields import RichTextUploadingField
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
-from apps.abstract.models.article import AbstractBaseArticle
 from .category import Category
 
 
-class Article(AbstractBaseArticle):
+class ArticleQuerySet(models.QuerySet):
+    def published(self):
+        return self.filter(publication__lte=now()).exclude(expiration__lte=now())
+
+    def expired(self):
+        return self.filter(publication__lt=now(), expiration__lte=now())
+
+    def not_yet(self):
+        return self.filter(publication__gt=now())
+
+
+class Article(models.Model):
     is_pinned = models.BooleanField(_("Pinned"))
+    title = models.CharField(_("Title"), max_length=150)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name=_("Category"))
+    preview_image = models.ImageField(_("Preview image"), upload_to="banners/%Y/%m/%d/preview/")
+    preview_text = RichTextUploadingField(_("Preview text"))
+    detail_image = models.ImageField(_("Detail image"), upload_to="banners/%Y/%m/%d/preview/detail/")
+    detail_text = RichTextUploadingField(_("Detail text"))
+    publication = models.DateTimeField(_("Publication"), default=now)
+    expiration = models.DateTimeField(_("Expiration"), null=True, blank=True)
 
-    def preview_upload_path(self, filename: str):
-        date = now().date()
-        return f'news/{date.year}/{date.month}/{date.day}/news_{self.pk}_preview_{filename}'
+    objects = ArticleQuerySet.as_manager()
 
-    def detail_upload_path(self, filename: str):
-        date = now().date()
-        return f'news/{date.year}/{date.month}/{date.day}/news_{self.pk}_detail_{filename}'
+    def clean(self):
+        if self.expiration and self.expiration <= self.publication:
+            raise ValidationError({"expired": _("The field must be larger than published")})
 
-    class Meta(AbstractBaseArticle.Meta):
-        ordering = ('-is_pinned', '-published')
+    class Meta:
+        verbose_name = _("Article")
+        verbose_name_plural = _("Articles")
+        ordering = ('-is_pinned', '-publication')

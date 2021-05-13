@@ -1,12 +1,20 @@
 from django_filters import rest_framework as filters
-from apps.abstract.rest.filters.category import CategoryFilter
-from apps.abstract.rest.views.article import BaseArticleViewSet
-from ..serializers.article import NewsSerializer
+from rest_framework import permissions, viewsets
+from rest_framework.pagination import LimitOffsetPagination
+from ..filters.category import CategoryFilter
+from ..serializers.article import ArticleListSerializer, ArticleDetailSerializer
 from ...models import Article
 
 
-class ArticleViewSet(BaseArticleViewSet):
+class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Article.objects.published()
-    serializer_class = NewsSerializer
     filter_backends = (filters.DjangoFilterBackend, )
     filterset_class = CategoryFilter
+    pagination_class = LimitOffsetPagination
+    permission_classes = (permissions.AllowAny, )
+
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return ArticleListSerializer
+        elif self.action == 'retrieve':
+            return ArticleDetailSerializer
