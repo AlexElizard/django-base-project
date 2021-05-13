@@ -1,14 +1,8 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-11 10:08+1000\n"
+"POT-Creation-Date: 2021-05-13 13:51+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,26 +14,62 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\apps\banner\apps.py:7 .\apps\banner\models\banner.py:21
+#: .\apps\banner\admin\admin.py:16 .\apps\banner\models\banner.py:24
+msgid "Publication"
+msgstr "Публикация"
+
+#: .\apps\banner\admin\filters.py:6
+msgid "Publication status"
+msgstr "Статус публикации"
+
+#: .\apps\banner\admin\filters.py:11
+msgid "Expired"
+msgstr "Истекло"
+
+#: .\apps\banner\admin\filters.py:12
+msgid "Published"
+msgstr "Опубликовано"
+
+#: .\apps\banner\admin\filters.py:13
+msgid "Not yet published"
+msgstr "Еще не опубликовано"
+
+#: .\apps\banner\apps.py:7 .\apps\banner\models\banner.py:31
 msgid "Banners"
 msgstr "Баннеры"
 
-#: .\apps\banner\models\banner.py:14
+#: .\apps\banner\models\banner.py:20
 msgid "Image"
 msgstr "Изображение"
 
-#: .\apps\banner\models\banner.py:15
+#: .\apps\banner\models\banner.py:21
 msgid "URL"
 msgstr "URL"
 
-#: .\apps\banner\models\banner.py:16
+#: .\apps\banner\models\banner.py:22 .\apps\banner\models\category.py:6
 msgid "Name"
 msgstr "Наименование"
 
-#: .\apps\banner\models\banner.py:17
+#: .\apps\banner\models\banner.py:23 .\apps\banner\models\category.py:11
 msgid "Categories"
 msgstr "Категории"
 
-#: .\apps\banner\models\banner.py:20
+#: .\apps\banner\models\banner.py:25
+msgid "Expiration"
+msgstr "Истекает"
+
+#: .\apps\banner\models\banner.py:30
 msgid "Banner"
 msgstr "Баннер"
+
+#: .\apps\banner\models\banner.py:39
+msgid "The field must be larger than published"
+msgstr "Поле должно быть больше чем публикация"
+
+#: .\apps\banner\models\category.py:7
+msgid "Slug"
+msgstr "Slug"
+
+#: .\apps\banner\models\category.py:10
+msgid "Category"
+msgstr "Категории"
