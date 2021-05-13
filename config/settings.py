@@ -6,7 +6,7 @@ from email.utils import getaddresses
 BASE_DIR = environ.Path(__file__) - 2
 ROOT_URLCONF = 'config.urls'
 WSGI_APPLICATION = 'config.wsgi.application'
-env = environ.Env(DEBUG=(bool, False))
+env = environ.Env()
 env.read_env(str(BASE_DIR + '.env'))
 
 SECRET_KEY = env.str('SECRET_KEY')
