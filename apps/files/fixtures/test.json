@@ -1,0 +1,32 @@
+[
+  {
+    "model": "files.category",
+    "pk": 1,
+    "fields": {
+      "name": "Регламенты",
+      "slug": "regulations"
+    }
+  },
+  {
+    "model": "files.file",
+    "pk": 1,
+    "fields": {
+      "name": "Бусидо - для всех",
+      "file": "test/files/бусидо.jpg",
+      "category": 1,
+      "publication": "2010-01-01T00:00:00Z",
+      "expiration": null
+    }
+  },
+  {
+    "model": "files.file",
+    "pk": 2,
+    "fields": {
+      "name": "Не для всех документ",
+      "file": "test/files/бусидо.jpg",
+      "category": 1,
+      "publication": "2010-01-01T00:00:00Z",
+      "expiration": null
+    }
+  }
+]
