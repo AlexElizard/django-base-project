@@ -15,6 +15,6 @@ class ArticleAdmin(admin.ModelAdmin):
         (None, {'fields': ('is_pinned', 'title', 'category')}),
         (_("Preview"), {'fields': ('preview_image', 'preview_text')}),
         (_("Detail"), {'fields': ('detail_image', 'detail_text')}),
-        (_("Publication"), {'fields': ('published', 'expired')}),
+        (_("Publication"), {'fields': ('publication', 'expiration')}),
     )
     list_filter = ('category', PublishFilterAdmin)

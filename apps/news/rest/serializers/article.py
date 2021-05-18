@@ -10,16 +10,17 @@ class CKEditorTextField(serializers.CharField):
 
 class ArticleListSerializer(serializers.Serializer):
     is_pinned = serializers.BooleanField()
+    id = serializers.IntegerField()
     title = serializers.CharField()
     category = CategorySerializer()
     preview_image = serializers.ImageField()
-    preview_text = CKEditorTextField
-    published = serializers.DateTimeField()
+    preview_text = CKEditorTextField()
+    publication = serializers.DateTimeField()
 
 
 class ArticleDetailSerializer(serializers.Serializer):
     title = serializers.CharField()
     category = CategorySerializer()
     detail_image = serializers.ImageField()
-    detail_text = CKEditorTextField
-    published = serializers.DateTimeField()
+    detail_text = CKEditorTextField()
+    publication = serializers.DateTimeField()
