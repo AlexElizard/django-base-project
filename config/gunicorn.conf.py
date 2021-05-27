@@ -50,8 +50,8 @@ if __name__ == '__main__':
     WantedBy=multi-user.target
     '''
 
-    print("# Сокет:\n" + socket_output, "# Сервис:\n" + service_output, sep='\n\n')
-    choice = input('Все верно? y or n')
+    print("Проверьте настройки: \nСокет:\n" + socket_output, "Сервис:\n" + service_output, sep='\n\n')
+    choice = input('Все верно? y or n: ')
     if choice == 'y':
         with open(f'{SYSTEMD_PATH}/gunicorn-{PROJECT_NAME}.socket', 'w') as file:
             file.write(socket_output)
