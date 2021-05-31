@@ -11,6 +11,15 @@ urlpatterns = [
 if 'ckeditor_uploader' in settings.INSTALLED_APPS:
     urlpatterns.append(path('api/ckeditor/', include('ckeditor_uploader.urls')))
 
+if 'drf_spectacular' in settings.INSTALLED_APPS:
+    from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+    urlpatterns.append(
+        path('swagger/', include([
+            path('', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+            path('schema/', SpectacularAPIView.as_view(), name='schema')
+        ]))
+    )
+
 if 'rest_framework_simplejwt.authentication.JWTAuthentication' in settings.REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES']:
     from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
     urlpatterns.append(path('api/auth/token/', include([
@@ -25,12 +34,3 @@ if settings.DEBUG:
     if 'debug_toolbar' in settings.INSTALLED_APPS:
         import debug_toolbar
         urlpatterns.append(path('__debug__/', include(debug_toolbar.urls)))
-
-    if 'drf_spectacular' in settings.INSTALLED_APPS:
-        from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
-        urlpatterns.append(
-            path('swagger/', include([
-                path('', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-                path('schema/', SpectacularAPIView.as_view(), name='schema')
-            ]))
-        )
