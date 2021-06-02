@@ -3,16 +3,21 @@ import re
 from datetime import timedelta
 from email.utils import getaddresses
 
+###########
+# Environ #
+###########
 BASE_DIR = environ.Path(__file__) - 2
-ROOT_URLCONF = 'config.urls'
-WSGI_APPLICATION = 'config.wsgi.application'
-env = environ.Env()
+env = environ.Env(DEBUG=(bool, False))
 env.read_env(str(BASE_DIR + '.env'))
 
-SECRET_KEY = env.str('SECRET_KEY')
-DEBUG = env.bool('DEBUG')
+##########################################################################################
+#                                     BASE SETTINGS                                      #
+##########################################################################################
 ALLOWED_HOSTS = env.list('DOMAINS')
-
+DEBUG = env('DEBUG')
+ROOT_URLCONF = 'config.urls'
+SECRET_KEY = env('SECRET_KEY')
+WSGI_APPLICATION = 'config.wsgi.application'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -21,7 +26,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -32,7 +36,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
 ]
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -120,7 +123,7 @@ SIMPLE_JWT = {
 }
 
 ##########################################################################################
-#                                        SETTINGS                                        #
+#                                    PROJECT SETTINGS                                    #
 ##########################################################################################
 ##################
 # AUTHENTICATION #
@@ -189,3 +192,10 @@ IGNORABLE_404_URLS = [
 DEFAULT_FROM_EMAIL = env.str('EMAIL_FROM')
 EMAIL_CONFIG = env.email_url()
 vars().update(EMAIL_CONFIG)
+
+##########################################################################################
+#                                 APPLICATIONS SETTINGS                                  #
+##########################################################################################
+INSTALLED_APPS.extend([
+
+])
