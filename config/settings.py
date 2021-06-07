@@ -3,9 +3,9 @@ import re
 from datetime import timedelta
 from email.utils import getaddresses
 
-###########
-# Environ #
-###########
+ROOT_URLCONF = 'config.urls'
+WSGI_APPLICATION = 'config.wsgi.application'
+
 BASE_DIR = environ.Path(__file__) - 2
 env = environ.Env(DEBUG=(bool, False))
 env.read_env(str(BASE_DIR + '.env'))
@@ -15,9 +15,8 @@ env.read_env(str(BASE_DIR + '.env'))
 ##########################################################################################
 ALLOWED_HOSTS = env.list('DOMAINS')
 DEBUG = env('DEBUG')
-ROOT_URLCONF = 'config.urls'
 SECRET_KEY = env('SECRET_KEY')
-WSGI_APPLICATION = 'config.wsgi.application'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,9 +58,20 @@ TEMPLATES = [
 # CORS Headers #
 ################
 if DEBUG:
+    CORS_ORIGIN_ALLOW_ALL = True
     INSTALLED_APPS.append('corsheaders')
     MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
-    CORS_ORIGIN_ALLOW_ALL = True
+
+#################
+# Debug Toolbar #
+#################
+if DEBUG:
+    INSTALLED_APPS.append('debug_toolbar')
+    MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+    DEBUG_TOOLBAR_CONFIG = {
+        'SHOW_TOOLBAR_CALLBACK': lambda request: True,
+        'EXTRA_SIGNALS': [],
+    }
 
 ##################################
 # Django Better Admin ArrayField #
@@ -96,17 +106,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
 }
 
-#################
-# Debug Toolbar #
-#################
-if DEBUG:
-    INSTALLED_APPS.append('debug_toolbar')
-    MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
-    DEBUG_TOOLBAR_CONFIG = {
-        'SHOW_TOOLBAR_CALLBACK': lambda request: True,
-        'EXTRA_SIGNALS': [],
-    }
-
 ###################
 # DRF Spectacular #
 ###################
@@ -123,7 +122,14 @@ SIMPLE_JWT = {
 }
 
 ##########################################################################################
-#                                    PROJECT SETTINGS                                    #
+#                             PROJECT APPLICATIONS SETTINGS                              #
+##########################################################################################
+INSTALLED_APPS += [
+
+]
+
+##########################################################################################
+#                                    MODULES SETTINGS                                    #
 ##########################################################################################
 ##################
 # AUTHENTICATION #
@@ -156,16 +162,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ############
 # Datetime #
 ############
-USE_TZ = True
 TIME_ZONE = 'Asia/Vladivostok'
+USE_TZ = True
 
 ################
 # File storage #
 ################
-STATIC_URL = '/django-static/'
-STATIC_ROOT = BASE_DIR.path('static')
-MEDIA_URL = '/upload/'
 MEDIA_ROOT = BASE_DIR.path('media')
+MEDIA_URL = '/upload/'
+STATIC_ROOT = BASE_DIR.path('static')
+STATIC_URL = '/django-static/'
 
 ########################
 # Internationalization #
@@ -178,24 +184,76 @@ USE_L10N = True
 ###########
 # Logging #
 ###########
-SERVER_EMAIL = env.str('EMAIL_FROM')
 ADMINS = getaddresses(env.list('ADMINS'))
 MANAGERS = getaddresses(env.list('MANAGERS'))
+
+LOG_FILES_DIR = BASE_DIR.path("tmp/logs/django")
+EMAIL_FILE_PATH = BASE_DIR.path('tmp/mails')
+SERVER_EMAIL = env.str('EMAIL_FROM')
+
 IGNORABLE_404_URLS = [
     re.compile(r'^/favicon\.ico$'),
     re.compile(r'^/robots\.txt$'),
 ]
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        'simple': {
+            'format': '[{levelname}] - {message}',
+            'style': '{',
+        },
+        'standard': {
+            'format': '[{levelname}] {asctime}\n  Message: {message}\n  Module: {name}\n  Line: {lineno}\n',
+            'style': '{',
+        },
+    },
+    'filters': {
+        'is_debug': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'is_not_debug': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'filters': ['is_debug'],
+            'formatter': 'simple',
+        },
+        'errors_to_file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'encoding': 'utf-8',
+            'filename': f'{LOG_FILES_DIR}/errors.log',
+            'filters': ['is_not_debug'],
+            'formatter': 'standard',
+        },
+        'mail_to_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'email_backend': 'django.core.mail.backends.filebased.EmailBackend',
+            'filters': ['is_not_debug'],
+            'include_html': True,
+        }
+    },
+    'loggers': {
+        'apps': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'errors_to_file', 'mail_to_admins'],
+            'propagate': False
+        },
+    }
+}
 
 ###############
-# SMTP-server #
+# SMTP server #
 ###############
 DEFAULT_FROM_EMAIL = env.str('EMAIL_FROM')
 EMAIL_CONFIG = env.email_url()
+if EMAIL_CONFIG['EMAIL_BACKEND'] != environ.Env.EMAIL_SCHEMES['filemail']:
+    del EMAIL_CONFIG['EMAIL_FILE_PATH']
 vars().update(EMAIL_CONFIG)
-
-##########################################################################################
-#                                 APPLICATIONS SETTINGS                                  #
-##########################################################################################
-INSTALLED_APPS.extend([
-
-])

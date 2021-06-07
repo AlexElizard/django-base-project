@@ -12,7 +12,7 @@
     "pk": 1,
     "fields": {
       "name": "Бусидо - для всех",
-      "file": "test/files/бусидо.jpg",
+      "file": "tests/files/бусидо.jpg",
       "category": 1,
       "publication": "2010-01-01T00:00:00Z",
       "expiration": null
@@ -23,7 +23,7 @@
     "pk": 2,
     "fields": {
       "name": "Не для всех документ",
-      "file": "test/files/бусидо.jpg",
+      "file": "tests/files/бусидо.jpg",
       "category": 1,
       "publication": "2010-01-01T00:00:00Z",
       "expiration": null

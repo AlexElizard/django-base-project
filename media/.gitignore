@@ -3,7 +3,7 @@
 
 # Исключаем из игнора папки и вложенные ресурсы
 !.gitignore
-!default
-!default/**
-!test
-!test/**
+!defaults
+!defaults/**
+!tests
+!tests/**
