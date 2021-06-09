@@ -1,7 +1,7 @@
 from django_filters import rest_framework as filters
 from rest_framework import generics, permissions
-from ..filters.category import CategoryFilter
-from ..serializers.banners import BannerSerializer
+from .filters import CategoryFilter
+from .serializers import BannerSerializer
 from ...models import Banner
 
 

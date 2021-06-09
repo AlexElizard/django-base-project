@@ -1,12 +1,7 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from .filters import PublishFilterAdmin
-from ..models import Category, Banner
-
-
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug')
+from ...models import Banner
 
 
 @admin.register(Banner)

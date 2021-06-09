@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 12:58+1000\n"
+"POT-Creation-Date: 2021-06-08 10:34+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,62 +14,62 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\apps\banners\admin\admin.py:16 .\apps\banners\models\banner.py:24
+#: .\admin\banner\admin.py:11 .\models\banner.py:24
 msgid "Publication"
 msgstr "Публикация"
 
-#: .\apps\banners\admin\filters.py:6
+#: .\admin\banner\filters.py:6
 msgid "Publication status"
 msgstr "Статус публикации"
 
-#: .\apps\banners\admin\filters.py:11
+#: .\admin\banner\filters.py:11
 msgid "Expired"
 msgstr "Истекло"
 
-#: .\apps\banners\admin\filters.py:12
+#: .\admin\banner\filters.py:12
 msgid "Published"
 msgstr "Опубликовано"
 
-#: .\apps\banners\admin\filters.py:13
+#: .\admin\banner\filters.py:13
 msgid "Not yet published"
 msgstr "Еще не опубликовано"
 
-#: .\apps\banners\apps.py:7 .\apps\banners\models\banner.py:35
+#: .\apps.py:7 .\models\banner.py:35
 msgid "Banners"
 msgstr "Баннеры"
 
-#: .\apps\banners\models\banner.py:20
+#: .\models\banner.py:20
 msgid "Image"
 msgstr "Изображение"
 
-#: .\apps\banners\models\banner.py:21
+#: .\models\banner.py:21
 msgid "URL"
 msgstr "URL"
 
-#: .\apps\banners\models\banner.py:22 .\apps\banners\models\category.py:6
+#: .\models\banner.py:22 .\models\category.py:6
 msgid "Name"
 msgstr "Наименование"
 
-#: .\apps\banners\models\banner.py:23 .\apps\banners\models\category.py:11
+#: .\models\banner.py:23 .\models\category.py:11
 msgid "Categories"
 msgstr "Категории"
 
-#: .\apps\banners\models\banner.py:25
+#: .\models\banner.py:25
 msgid "Expiration"
 msgstr "Истекает"
 
-#: .\apps\banners\models\banner.py:31
+#: .\models\banner.py:31
 msgid "The field must be larger than published"
 msgstr "Поле должно быть больше чем публикация"
 
-#: .\apps\banners\models\banner.py:34
+#: .\models\banner.py:34
 msgid "Banner"
 msgstr "Баннер"
 
-#: .\apps\banners\models\category.py:7
+#: .\models\category.py:7
 msgid "Slug"
 msgstr "Slug"
 
-#: .\apps\banners\models\category.py:10
+#: .\models\category.py:10
 msgid "Category"
 msgstr "Категории"

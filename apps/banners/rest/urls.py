@@ -1,6 +1,6 @@
 from django.urls import path
-from .views.banner import BannerListAPIView
-from .views.category import CategoryListAPIView
+from .banner.views import BannerListAPIView
+from .category.views import CategoryListAPIView
 
 
 urlpatterns = [
