@@ -12,9 +12,13 @@ cd ~ && mkdir -p python && cd python && wget https://www.python.org/ftp/python/$
 ```
 * Выполните `configure` сценарий:
 ```
-cd Python-${PYTHON_VERSION} && ./configure --enable-optimizations
+cd Python-${PYTHON_VERSION} && ./configure --enable-optimizations --prefix=/opt/python${PYTHON_VERSION} 
 ```
-* Соберите и установите Python. <br>Значение параметра `-j` должно соответствовать числу, полученному при выводе команды `nproc`
+* Соберите Python. <br>Значение параметра `-j` должно соответствовать числу, полученному при выводе команды `nproc`
 ```
-make -j 2 && sudo make altinstall && cd ~
+make -j 2
+```
+* Установите собранный Python
+```
+sudo make altinstall && cd ~
 ```

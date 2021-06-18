@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 12:58+1000\n"
+"POT-Creation-Date: 2021-06-08 10:00+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,34 +14,34 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\apps\pages\apps.py:7 .\apps\pages\models\page.py:14
+#: .\apps.py:7 .\models\page.py:14
 msgid "Pages"
 msgstr "Страницы"
 
-#: .\apps\pages\models\category.py:6
+#: .\models\category.py:6
 msgid "Name"
 msgstr "Наименование"
 
-#: .\apps\pages\models\category.py:7
+#: .\models\category.py:7
 msgid "Slug"
 msgstr "Slug"
 
-#: .\apps\pages\models\category.py:10 .\apps\pages\models\page.py:9
+#: .\models\category.py:10 .\models\page.py:9
 msgid "Category"
 msgstr "Категория"
 
-#: .\apps\pages\models\category.py:11
+#: .\models\category.py:11
 msgid "Categories"
 msgstr "Категории"
 
-#: .\apps\pages\models\page.py:8
+#: .\models\page.py:8
 msgid "Title"
 msgstr "Название"
 
-#: .\apps\pages\models\page.py:10
+#: .\models\page.py:10
 msgid "Text"
 msgstr "Текст"
 
-#: .\apps\pages\models\page.py:13
+#: .\models\page.py:13
 msgid "Page"
 msgstr "Страницы"

@@ -1,10 +1,5 @@
 from django.contrib import admin
-from ..models import Category, Page
-
-
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    pass
+from ...models import Page
 
 
 @admin.register(Page)

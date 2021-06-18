@@ -134,21 +134,19 @@ INSTALLED_APPS += [
 ##################
 # AUTHENTICATION #
 ##################
-AUTH_USER_MODEL = 'auth.User'
-AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
     {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
+AUTH_USER_MODEL = 'auth.User'
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'] = [
     'rest_framework_simplejwt.authentication.JWTAuthentication',
 ]
 if DEBUG:
-    REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'].append(
-        'rest_framework.authentication.SessionAuthentication'
-    )
+    REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'].append('rest_framework.authentication.SessionAuthentication')
 
 ############
 # Database #
@@ -177,7 +175,6 @@ STATIC_URL = '/django-static/'
 # Internationalization #
 ########################
 LANGUAGE_CODE = 'ru'
-LOCALE_PATHS = []
 USE_I18N = True
 USE_L10N = True
 
@@ -226,7 +223,9 @@ LOGGING = {
         },
         'errors_to_file': {
             'level': 'ERROR',
-            'class': 'logging.FileHandler',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'maxBytes': 1024*1024*10,  # 10MB
+            'backupCount': 10,
             'encoding': 'utf-8',
             'filename': f'{LOG_FILES_DIR}/errors.log',
             'filters': ['is_not_debug'],

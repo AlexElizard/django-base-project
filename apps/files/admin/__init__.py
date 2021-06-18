@@ -1,2 +1,2 @@
 from .category.admin import CategoryAdmin
-from .page.admin import PageAdmin
+from .file.admin import FileAdmin

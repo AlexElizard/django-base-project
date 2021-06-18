@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 12:58+1000\n"
+"POT-Creation-Date: 2021-06-08 09:59+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,54 +14,54 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\apps\files\admin\admin.py:16 .\apps\files\models\file.py:23
+#: .\admin\file\admin.py:11 .\models\file.py:23
 msgid "Publication"
 msgstr "Публикация"
 
-#: .\apps\files\admin\filters.py:6
+#: .\admin\file\filters.py:6
 msgid "Publication status"
 msgstr "Статус публикации"
 
-#: .\apps\files\admin\filters.py:11
+#: .\admin\file\filters.py:11
 msgid "Expired"
 msgstr "Истекло"
 
-#: .\apps\files\admin\filters.py:12
+#: .\admin\file\filters.py:12
 msgid "Published"
 msgstr "Опубликовано"
 
-#: .\apps\files\admin\filters.py:13
+#: .\admin\file\filters.py:13
 msgid "Not yet published"
 msgstr "Еще не опубликовано"
 
-#: .\apps\files\apps.py:7 .\apps\files\models\file.py:34
+#: .\apps.py:7 .\models\file.py:34
 msgid "Files"
 msgstr "Файлы"
 
-#: .\apps\files\models\category.py:6 .\apps\files\models\file.py:20
+#: .\models\category.py:6 .\models\file.py:20
 msgid "Name"
 msgstr "Наименование"
 
-#: .\apps\files\models\category.py:7
+#: .\models\category.py:7
 msgid "Slug"
 msgstr "Slug"
 
-#: .\apps\files\models\category.py:10 .\apps\files\models\file.py:22
+#: .\models\category.py:10 .\models\file.py:22
 msgid "Category"
 msgstr "Категории"
 
-#: .\apps\files\models\category.py:11
+#: .\models\category.py:11
 msgid "Categories"
 msgstr "Категории"
 
-#: .\apps\files\models\file.py:21 .\apps\files\models\file.py:33
+#: .\models\file.py:21 .\models\file.py:33
 msgid "File"
 msgstr "Файл"
 
-#: .\apps\files\models\file.py:24
+#: .\models\file.py:24
 msgid "Expiration"
 msgstr "Истекает"
 
-#: .\apps\files\models\file.py:30
+#: .\models\file.py:30
 msgid "The field must be larger than published"
 msgstr "Поле должно быть больше чем публикация"
