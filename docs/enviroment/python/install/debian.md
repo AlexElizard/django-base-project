@@ -14,7 +14,7 @@ cd ~ && mkdir -p python && cd python && wget https://www.python.org/ftp/python/$
 ```
 cd Python-${PYTHON_VERSION} && ./configure --enable-optimizations --prefix=/opt/python${PYTHON_VERSION} 
 ```
-* Соберите Python. <br>Значение параметра `-j` должно соответствовать числу, полученному при выводе команды `nproc`
+* Соберите Python. Значение параметра `-j` должно соответствовать числу, полученному при выводе команды `nproc`
 ```
 make -j 2
 ```
