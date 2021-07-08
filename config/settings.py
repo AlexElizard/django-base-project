@@ -196,12 +196,8 @@ LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "formatters": {
-        'simple': {
-            'format': '[{levelname}] - {message}',
-            'style': '{',
-        },
         'standard': {
-            'format': '[{levelname}] {asctime}\n  Message: {message}\n  Module: {name}\n  Line: {lineno}\n',
+            'format': '[{levelname}] {asctime}\n  Where: {name}:{lineno}\n  Message: {message}',
             'style': '{',
         },
     },
@@ -219,7 +215,7 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'filters': ['is_debug'],
-            'formatter': 'simple',
+            'formatter': 'standard',
         },
         'errors_to_file': {
             'level': 'ERROR',
