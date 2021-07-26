@@ -13,7 +13,7 @@ env.read_env(str(BASE_DIR + '.env'))
 ##########################################################################################
 #                                     BASE SETTINGS                                      #
 ##########################################################################################
-ALLOWED_HOSTS = env.list('DOMAINS')
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 DEBUG = env('DEBUG')
 SECRET_KEY = env('SECRET_KEY')
 
@@ -57,10 +57,9 @@ TEMPLATES = [
 ################
 # CORS Headers #
 ################
-if DEBUG:
-    CORS_ORIGIN_ALLOW_ALL = True
-    INSTALLED_APPS.append('corsheaders')
-    MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
+CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_HOSTS")
+INSTALLED_APPS.append('corsheaders')
+MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
 
 #################
 # Debug Toolbar #
@@ -101,7 +100,7 @@ INSTALLED_APPS.append('django_filters')
 INSTALLED_APPS.append('rest_framework')
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
 }
@@ -197,8 +196,9 @@ LOGGING = {
     "disable_existing_loggers": False,
     "formatters": {
         'standard': {
-            'format': '[{levelname}] {asctime}\n  Where: {name}:{lineno}\n  Message: {message}',
+            'format': '[{levelname} | {asctime}] {message}',
             'style': '{',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
         },
     },
     'filters': {
