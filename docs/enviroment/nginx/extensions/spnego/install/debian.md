@@ -6,7 +6,7 @@ nginx -V
 ```
 * Создайте переменную окружения ***NGINX_VERSION***
 ```
-NGINX_VERSION=1.18.0
+NGINX_VERSION=1.20.0
 ```
 * Скачайте и распакайке исходники nginx и nginx-spnego-module
 ```
@@ -27,7 +27,11 @@ nginx -V
 ...
 --add-module=spnego-http-auth-nginx-module
 ```
-* Запустите сборку
+* Запустите сборку. Значение параметра `-j` должно соответствовать числу, полученному при выводе команды `nproc`
 ```
-sudo make && sudo make install
+make -j 4 && sudo make install
+```
+* Удалите файлы сборки
+```
+cd ~ && sudo rm -rf /tmp/nginx-${NGINX_VERSION}*
 ```
