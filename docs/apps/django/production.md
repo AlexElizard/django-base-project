@@ -13,7 +13,7 @@ pipenv shell
 ```
 * Соберите файлы статики
 ```
-pyhon manage.py collectstatic
+python manage.py collectstatic
 ```
 * Загрузите миграции:
 ```
