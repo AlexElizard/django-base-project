@@ -45,7 +45,7 @@ if __name__ == '__main__':
     [Service]
     Type=notify
     User={USER}
-    Group={USER}
+    Group={NGINX_USER}
     RuntimeDirectory=gunicorn
     WorkingDirectory={BASE_DIR}
     ExecStart={PIPENV_PATH} run gunicorn --config config/gunicorn.py config.wsgi
