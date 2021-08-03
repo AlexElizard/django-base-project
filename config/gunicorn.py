@@ -9,6 +9,7 @@ reload = True
 #####################################
 if __name__ == '__main__':
     from pathlib import Path
+    from subprocess import getoutput
 
     DEFAULT_BASE_DIR = Path(__file__).absolute().parents[1]
     BASE_DIR = input(f"Project directory [default: {DEFAULT_BASE_DIR}]: ") or DEFAULT_BASE_DIR
@@ -22,7 +23,7 @@ if __name__ == '__main__':
     DEFAULT_NGINX_USER = 'www-data'
     NGINX_USER = input(f"Nginx user [default: {DEFAULT_NGINX_USER}]: ") or DEFAULT_NGINX_USER
 
-    DEFAULT_PIPENV_PATH = '/bin/pipenv'
+    DEFAULT_PIPENV_PATH = getoutput("which pipenv")
     PIPENV_PATH = input(f"Pipenv path [default: {DEFAULT_PIPENV_PATH}]: ") or DEFAULT_PIPENV_PATH
 
     # Socket template
