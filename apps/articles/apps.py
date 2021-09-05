@@ -3,5 +3,5 @@ from django.utils.translation import gettext_lazy as _
 
 
 class NewsConfig(AppConfig):
-    name = 'apps.news'
+    name = 'apps.articles'
     verbose_name = _("News")

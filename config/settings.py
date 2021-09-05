@@ -110,6 +110,33 @@ REST_FRAMEWORK = {
 ###################
 INSTALLED_APPS.append('drf_spectacular')
 REST_FRAMEWORK['DEFAULT_SCHEMA_CLASS'] = 'drf_spectacular.openapi.AutoSchema'
+SPECTACULAR_SETTINGS = {
+    'POSTPROCESSING_HOOKS': [
+        'drf_spectacular.hooks.postprocess_schema_enums',
+    ],
+}
+
+##################
+# DRF Camel Case #
+##################
+REST_FRAMEWORK.update({
+    'DEFAULT_RENDERER_CLASSES': (
+        'djangorestframework_camel_case.render.CamelCaseJSONRenderer',
+        'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer',
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'djangorestframework_camel_case.parser.CamelCaseFormParser',
+        'djangorestframework_camel_case.parser.CamelCaseMultiPartParser',
+        'djangorestframework_camel_case.parser.CamelCaseJSONParser',
+    ),
+    'JSON_UNDERSCOREIZE': {
+        'no_underscore_before_number': True,
+    },
+})
+SPECTACULAR_SETTINGS['CAMELIZE_NAMES'] = True
+SPECTACULAR_SETTINGS['POSTPROCESSING_HOOKS'].append(
+    'drf_spectacular.contrib.djangorestframework_camel_case.camelize_serializer_fields'
+)
 
 ##############
 # Simple JWT #

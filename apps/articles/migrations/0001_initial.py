@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                 ('detail_text', ckeditor_uploader.fields.RichTextUploadingField(verbose_name='Detail text')),
                 ('publication', models.DateTimeField(default=django.utils.timezone.now, verbose_name='Publication')),
                 ('expiration', models.DateTimeField(blank=True, null=True, verbose_name='Expiration')),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='news.category', verbose_name='Category')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='articles.category', verbose_name='Category')),
             ],
             options={
                 'verbose_name': 'Article',
