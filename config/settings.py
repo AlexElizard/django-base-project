@@ -105,6 +105,12 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
 }
 
+#########################
+# Django Simple History #
+#########################
+INSTALLED_APPS.append('simple_history')
+MIDDLEWARE.append('simple_history.middleware.HistoryRequestMiddleware')
+
 ###################
 # DRF Spectacular #
 ###################

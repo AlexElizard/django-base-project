@@ -10,4 +10,4 @@ generate-static:
 	python manage.py collectstatic --no-input
 
 test-init:
-	python manage.py loaddata test
+	pipenv sync --dev && python manage.py loaddata test

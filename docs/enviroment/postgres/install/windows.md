@@ -1,2 +1,0 @@
-* Скачайте PostgreSQL с [официального сайта](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
-* Запустите установщик. Выберите PostgreSQL-сервер, консольную утилиту psql, Stack Builder
