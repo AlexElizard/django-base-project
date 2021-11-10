@@ -216,7 +216,6 @@ USE_L10N = True
 ADMINS = getaddresses(env.list('ADMINS'))
 MANAGERS = getaddresses(env.list('MANAGERS'))
 
-LOG_FILES_DIR = BASE_DIR.path("tmp/logs/django")
 EMAIL_FILE_PATH = BASE_DIR.path('tmp/mails')
 SERVER_EMAIL = env.str('EMAIL_FROM')
 
@@ -256,7 +255,7 @@ LOGGING = {
             'maxBytes': 1024*1024*10,  # 10MB
             'backupCount': 10,
             'encoding': 'utf-8',
-            'filename': f'{LOG_FILES_DIR}/errors.log',
+            'filename': f'{BASE_DIR.path("tmp/logs/")}/errors.log',
             'filters': ['is_not_debug'],
             'formatter': 'standard',
         },
