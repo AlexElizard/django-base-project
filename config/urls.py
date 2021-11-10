@@ -6,6 +6,12 @@ from . import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/admin-panel/', include([
+
+    ])),
+    path('api/', include([
+
+    ])),
 ]
 
 if 'ckeditor_uploader' in settings.INSTALLED_APPS:

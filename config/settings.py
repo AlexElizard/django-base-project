@@ -120,6 +120,7 @@ SPECTACULAR_SETTINGS = {
     'POSTPROCESSING_HOOKS': [
         'drf_spectacular.hooks.postprocess_schema_enums',
     ],
+    'SCHEMA_PATH_PREFIX': r'(/api/admin-panel|/api)',
 }
 
 ##################
