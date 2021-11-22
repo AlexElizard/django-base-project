@@ -144,6 +144,7 @@ SPECTACULAR_SETTINGS['CAMELIZE_NAMES'] = True
 SPECTACULAR_SETTINGS['POSTPROCESSING_HOOKS'].append(
     'drf_spectacular.contrib.djangorestframework_camel_case.camelize_serializer_fields'
 )
+MIDDLEWARE.append('services.packages.djangorestframework_camel_case.middleware.CamelCaseQueryParamsMiddleware')
 
 ##############
 # Simple JWT #
